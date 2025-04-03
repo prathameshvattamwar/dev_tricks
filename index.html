@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Tricks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">DevTricks</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/html-tricks.html">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/css-tricks.html">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/js-tricks.html">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contribute.html">Contribute</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                        <label class="form-check-label text-light" for="darkModeToggle">Dark Mode</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-4">Frontend Developer Tricks</h1>
+            <p class="lead">Discover unique, interesting, and useful tricks for HTML, CSS, and JavaScript</p>
+            
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap align-items-center">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search for tricks..." id="searchInput">
+                            <button class="btn btn-primary" type="button" id="searchButton">Search</button>
+                        </div>
+                        
+                        <div id="recentSearches" class="ms-2 d-flex align-items-center" style="display: none !important;">
+                            <span class="fw-bold me-2">Recent Searches:</span>
+                            <div class="d-flex flex-wrap gap-1">
+                                <!-- Recent searches will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML Tricks</h5>
+                        <p class="card-text">Discover clever HTML techniques that improve semantics, accessibility, and functionality.</p>
+                        <a href="pages/html-tricks.html" class="btn btn-primary">Explore HTML Tricks</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS Tricks</h5>
+                        <p class="card-text">Learn powerful CSS techniques for layouts, animations, and responsive designs.</p>
+                        <a href="pages/css-tricks.html" class="btn btn-primary">Explore CSS Tricks</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Tricks</h5>
+                        <p class="card-text">Master JavaScript shortcuts and techniques that make coding faster and more efficient.</p>
+                        <a href="pages/js-tricks.html" class="btn btn-primary">Explore JS Tricks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>Frontend Developer Tricks &copy; 2025</p>
+            <p>Share your own tricks by <a href="pages/contribute.html" class="text-light">contributing</a>!</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

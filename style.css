@@ -1,0 +1,81 @@
+/* Custom styles beyond Bootstrap */
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background-color: #242424;
+    color: #e0e0e0;
+}
+
+body.dark-mode .bg-light {
+    background-color: #242424 !important;
+    color: #e0e0e0;
+}
+
+/* Trick card styling */
+.trick-card {
+    transition: transform 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.trick-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Code snippet styling */
+.code-snippet {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    position: relative;
+}
+
+body.dark-mode .code-snippet {
+    background-color: #2d2d2d;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Styling for the search section */
+.input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group .btn-primary {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #0d6efd;
+}
+
+#recentSearches {
+    margin-top: 0.5rem;
+}
+
+#recentSearches .badge {
+    background-color: #6c757d;
+    color: white;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
