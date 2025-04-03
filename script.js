@@ -230,12 +230,19 @@ function renderCSSTricks() {
 // Update the createTrickCard function to handle different code types
 function createTrickCard(trick, type = 'html') {
     const trickCol = document.createElement('div');
-    trickCol.className = 'col-md-6 col-lg-4 trick-card-wrapper mb-4';
+    trickCol.className = 'col-md-6 col-lg-4 trick-card-wrapper';
     
     // Create difficulty badge class
     let difficultyClass = 'bg-success'; // Default: beginner
-    if (trick.difficulty === 'intermediate') difficultyClass = 'bg-primary';
-    if (trick.difficulty === 'advanced') difficultyClass = 'bg-danger';
+    let difficultyIcon = 'fa-seedling';
+    if (trick.difficulty === 'intermediate') {
+        difficultyClass = 'bg-primary';
+        difficultyIcon = 'fa-code';
+    }
+    if (trick.difficulty === 'advanced') {
+        difficultyClass = 'bg-danger';
+        difficultyIcon = 'fa-fire';
+    }
     
     // Determine language for code highlighting
     let codeLanguage = 'html';
@@ -246,9 +253,12 @@ function createTrickCard(trick, type = 'html') {
     trickCol.innerHTML = `
         <div class="card trick-card" data-difficulty="${trick.difficulty}" data-tags="${trick.tags.join(' ')}">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <span class="badge ${difficultyClass}">${trick.difficulty.charAt(0).toUpperCase() + trick.difficulty.slice(1)}</span>
+                <span class="badge ${difficultyClass}">
+                    <i class="fas ${difficultyIcon} me-1"></i>
+                    ${trick.difficulty.charAt(0).toUpperCase() + trick.difficulty.slice(1)}
+                </span>
                 <div>
-                    ${trick.tags.map(tag => `<span class="badge bg-secondary">${tag}</span>`).join(' ')}
+                    ${trick.tags.map(tag => `<span class="badge bg-secondary"><i class="fas fa-tag me-1"></i>${tag}</span>`).join(' ')}
                 </div>
             </div>
             <div class="card-body">
@@ -256,18 +266,18 @@ function createTrickCard(trick, type = 'html') {
                 <p class="card-text">${trick.description}</p>
                 
                 <div class="code-snippet">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    <button class="copy-btn" onclick="copyCode(this)"><i class="far fa-copy me-1"></i>Copy</button>
                     <pre><code class="language-${codeLanguage}">${escapeHTML(trick.code)}</code></pre>
                 </div>
                 
-                <h6>Why it works:</h6>
+                <h6><i class="fas fa-lightbulb me-1"></i> Why it works:</h6>
                 <p>${trick.explanation}</p>
                 
-                <h6>Browser Compatibility:</h6>
+                <h6><i class="fas fa-globe me-1"></i> Browser Compatibility:</h6>
                 <p>${trick.compatibility}</p>
             </div>
             <div class="card-footer text-muted">
-                Added by: ${trick.author}
+                <i class="fas fa-user me-1"></i> Added by: ${trick.author}
             </div>
         </div>
     `;
@@ -597,10 +607,10 @@ function displayRecentSearches() {
     }
     
     // Find or create the searches container
-    let searchesDiv = recentSearchesContainer.querySelector('.d-flex.flex-wrap.gap-1');
+    let searchesDiv = recentSearchesContainer.querySelector('.d-inline-block');
     if (!searchesDiv) {
         searchesDiv = document.createElement('div');
-        searchesDiv.className = 'd-flex flex-wrap gap-1';
+        searchesDiv.className = 'd-inline-block';
         recentSearchesContainer.appendChild(searchesDiv);
     }
     
@@ -611,14 +621,13 @@ function displayRecentSearches() {
     recentSearches.forEach(term => {
         const badge = document.createElement('a');
         badge.href = `pages/search-results.html?q=${encodeURIComponent(term)}`;
-        badge.className = 'badge bg-secondary text-decoration-none';
+        badge.className = 'search-tag';
         badge.textContent = term;
         searchesDiv.appendChild(badge);
     });
     
     // Make sure the container is visible
-    recentSearchesContainer.style.removeProperty('display');
-    recentSearchesContainer.classList.add('d-flex');
+    recentSearchesContainer.style.display = 'block';
 }
 
 // Update the DOMContentLoaded event to include global search setup
@@ -754,3 +763,19 @@ function displaySearchResults(results, container) {
     // Initialize syntax highlighting
     hljs.highlightAll();
 }
+
+// Add animation classes to elements when they appear in viewport
+document.addEventListener('DOMContentLoaded', function() {
+    // Add staggered animation class to main content rows
+    const rows = document.querySelectorAll('.tricksContainer .row, .container .row');
+    rows.forEach(row => {
+      row.classList.add('staggered-animation');
+    });
+    
+    // Add fadeInUp animation to hero section elements
+    const heroElements = document.querySelectorAll('.hero-section h1, .hero-section .lead, .search-wrapper');
+    heroElements.forEach((el, index) => {
+      el.style.opacity = '0';
+      el.style.animation = `fadeInUp 0.6s ease-out ${0.1 * index}s forwards`;
+    });
+  });

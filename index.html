@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Pro if available (or regular FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Add JetBrains Mono for code blocks -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
@@ -48,25 +54,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="py-5 bg-light">
+    <header class="py-5 bg-light hero-section">
         <div class="container text-center">
             <h1 class="display-4">Frontend Developer Tricks</h1>
             <p class="lead">Discover unique, interesting, and useful tricks for HTML, CSS, and JavaScript</p>
             
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-8">
-                    <div class="d-flex flex-wrap align-items-center">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Search for tricks..." id="searchInput">
-                            <button class="btn btn-primary" type="button" id="searchButton">Search</button>
-                        </div>
-                        
-                        <div id="recentSearches" class="ms-2 d-flex align-items-center" style="display: none !important;">
-                            <span class="fw-bold me-2">Recent Searches:</span>
-                            <div class="d-flex flex-wrap gap-1">
-                                <!-- Recent searches will be dynamically added here -->
-                            </div>
-                        </div>
+            <div class="search-wrapper">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control search-input" placeholder="Search for tricks..." id="searchInput">
+                    <button class="btn btn-primary search-button" type="button" id="searchButton">
+                        <i class="fas fa-search me-1"></i> Search
+                    </button>
+                </div>
+                
+                <div id="recentSearches" class="recent-searches text-start" style="display: none;">
+                    <span class="fw-medium me-2">Recent Searches:</span>
+                    <div class="d-inline-block">
+                        <!-- Recent searches will be added here -->
                     </div>
                 </div>
             </div>
