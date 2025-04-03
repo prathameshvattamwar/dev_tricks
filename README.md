@@ -2,7 +2,7 @@
 
 A comprehensive collection of unique, interesting, and useful frontend development tricks for HTML, CSS, and JavaScript.
 
-![Frontend Developer Tricks](https://placeholder-image-url.com/screenshot.png)
+<p><a href="https://prathameshvattamwar.github.io/dev_tricks">Click here to see</a></p>
 
 ## About
 
